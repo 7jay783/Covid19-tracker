@@ -35,10 +35,27 @@ function WorldList() {
                     } 
                     return 0;
                    
+                  }):sortBy==='dpm'? [...res].sort(function(a, b) {
+                    var nameA = parseInt(a.deaths["1M_pop"])
+                   
+                    var nameB = parseInt(b.deaths["1M_pop"] )
+                    if(isNaN(nameA))
+                    nameA=0;   
+                    if(isNaN(nameB))
+                    nameB=0;  
+                    
+                    if (nameA < nameB) {
+                      return 1;
+                    }
+                    if (nameA > nameB) {
+                      return -1;
+                    } 
+                    return 0;
+                   
                   }):[...res].sort(function(a, b) {
                     return a.country.localeCompare(b.country)})
                 setAllData(sorted)
-                console.log(r.data.response)
+               
             }).catch(function (error) {
                 console.error(error);
             });
@@ -60,12 +77,13 @@ function WorldList() {
           <table id='table'>
                  <thead className='thead' >
                      <tr>
-                         <th onClick={()=>setSortBy('country')} style={{cursor:'pointer'}}>Country/Continent</th>
+                         <th onClick={()=>setSortBy('country')} style={{cursor:'pointer', backgroundColor:'green'}}>Country/Continent</th>
+                         <th onClick={()=>setSortBy('dpm')} style={{cursor:'pointer', backgroundColor:'green'}}>Deaths per million</th>
                          <th>Total cases</th>
-                         <th onClick={()=>setSortBy('new')} style={{cursor:'pointer'}}>New cases</th>
+                         <th onClick={()=>setSortBy('new')} style={{cursor:'pointer', backgroundColor:'green'}}>New cases</th>
                          <th>Critical cases</th>
-                         <th>Deaths</th>
                          <th>Active cases</th>
+                         <th>Deaths</th>
                          <th>Recovered cases</th>
                      </tr>
                  </thead>
@@ -77,6 +95,7 @@ function WorldList() {
                              return( 
                              <tr>
                                   <td>{e.country}</td>
+                                  <td>{e.deaths["1M_pop"]}</td>
                                   <td>{e.cases.total}</td>
                                   <td>{e.cases.new}</td>
                                   <td>{e.cases.critical}</td>
