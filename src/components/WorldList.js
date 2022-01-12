@@ -51,51 +51,47 @@ function WorldList() {
     }, [sortBy])
     return (
         <>
-        <div className='container_fluid'>
-            <div className='main_heading'>
-            <header>
+         <div>
+        
           
-          <h5>By: Jay Prakash | 12/01/2022 </h5>
-          <hr/>
-          </header>
-                <span><strong>Covid-19 Around World</strong></span>
-            </div>
-            <div className='table_responsive'>
-                <table id='table'>
-                       <thead className='thead' >
-                           <tr>
-                               <th onClick={()=>setSortBy('country')} style={{cursor:'pointer'}}>Country/Continent</th>
-                               <th>Total cases</th>
-                               <th onClick={()=>setSortBy('new')} style={{cursor:'pointer'}}>New cases</th>
-                               <th>Critical cases</th>
-                               <th>Deaths</th>
-                               <th>Active cases</th>
-                               <th>Recovered cases</th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                       
-                       {
-                          allData != null?                         
-                               allData.map((e)=>{
-                                   return( 
-                                   <tr>
-                                        <td>{e.country}</td>
-                                        <td>{e.cases.total}</td>
-                                        <td>{e.cases.new}</td>
-                                        <td>{e.cases.critical}</td>
-                                        <td>{e.cases.active}</td>
-                                        <td>{e.deaths.total}</td>
-                                        <td>{e.cases.recovered}</td>
-                                   </tr>)
-                               }):null
-                        }
-                      
-                       </tbody>
-                </table>
+          <h3>Covid-19 Around World </h3>
+          <span>By: Jay Prakash | 12/01/2022</span>
+               
+          <table id='table'>
+                 <thead className='thead' >
+                     <tr>
+                         <th onClick={()=>setSortBy('country')} style={{cursor:'pointer'}}>Country/Continent</th>
+                         <th>Total cases</th>
+                         <th onClick={()=>setSortBy('new')} style={{cursor:'pointer'}}>New cases</th>
+                         <th>Critical cases</th>
+                         <th>Deaths</th>
+                         <th>Active cases</th>
+                         <th>Recovered cases</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                 
+                 {
+                    allData != null?                         
+                         allData.map((e)=>{
+                             return( 
+                             <tr>
+                                  <td>{e.country}</td>
+                                  <td>{e.cases.total}</td>
+                                  <td>{e.cases.new}</td>
+                                  <td>{e.cases.critical}</td>
+                                  <td>{e.cases.active}</td>
+                                  <td>{e.deaths.total}</td>
+                                  <td>{e.cases.recovered}</td>
+                             </tr>)
+                         }):null
+                  }
+                
+                 </tbody>
+          </table>
+          
+            </div>       
 
-            </div>
-        </div>
         </>
        
     )

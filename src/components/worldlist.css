@@ -5,6 +5,13 @@
   margin: auto;
   
 }
+
+.main_heading{
+	margin: auto;
+	width: 100%;
+	
+	
+}
 #table td:first-child{
     text-align: left;
 }
@@ -24,7 +31,7 @@
   background-color: #04AA6D;
   color: white;
 }
-@media 
+/* @media 
 only screen and (max-width: 300px),
 (min-device-width: 300px) and (max-device-width: 1024px)  {
 
@@ -52,4 +59,4 @@ only screen and (max-width: 300px),
         color: black;
         font-weight: bold;
     }
-}
+} */

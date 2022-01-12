@@ -6,8 +6,7 @@ import WorldList from './components/WorldList';
 function App() {
   
   return (
-    <div className="App">
-        {/* <Covid/> */}
+    <div className="App">       
           <WorldList/>
     </div>
   );
