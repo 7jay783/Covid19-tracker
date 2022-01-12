@@ -1,16 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
-
-import Covid from './components/Covid';
-
+import WorldList from './components/WorldList';
 
 
 function App() {
   
   return (
     <div className="App">
-        <Covid/>
-
+        {/* <Covid/> */}
+          <WorldList/>
     </div>
   );
 }
