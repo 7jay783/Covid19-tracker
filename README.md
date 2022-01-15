@@ -1,4 +1,4 @@
-# See this URL https://7jay783.github.io/Covid19-tracker/
+# View at this URL https://7jay783.github.io/Covid19-tracker/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
